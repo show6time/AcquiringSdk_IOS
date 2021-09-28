@@ -14,7 +14,9 @@ Pod::Spec.new do |spec|
 	spec.ios.deployment_target = '11.0'
 	spec.source = { :git => 'https://github.com/TinkoffCreditSystems/AcquiringSdk_IOS.git', :tag => spec.version }
 	spec.source_files = 'TinkoffASDKCore/TinkoffASDKCore/**/*.swift'
-	spec.resource_bundles = "TinkoffASDKCore/TinkoffASDKCore/**/*.{lproj,strings}"
+	spec.resource_bundles = {
+		'TinkoffASDKCore' => ['TinkoffASDKCore/TinkoffASDKCore/**/*.{lproj,strings}']
+	}
 
 	spec.test_spec 'Tests' do |test_spec|
     	test_spec.source_files = 'TinkoffASDKCore/TinkoffASDKCoreTests/**/*.swift'
