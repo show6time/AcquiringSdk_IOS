@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
 	spec.license = { :type => 'Apache 2.0', :file => 'TinkoffASDKUI/License.txt' }
 	spec.author = { 'Tinkoff' => 'v.budnikov@tinkoff.ru' }
 	spec.platform = :ios
-	spec.module_name = "ASDKUI"
+	spec.module_name = "TinkoffASDKUI"
 	spec.swift_version = '5.0'
 	spec.ios.deployment_target = '11.0'
 	spec.source = { :git => 'https://github.com/TinkoffCreditSystems/AcquiringSdk_IOS.git', :tag => spec.version }
