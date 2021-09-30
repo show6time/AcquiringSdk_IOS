@@ -239,11 +239,11 @@ extension CardListPresenter: UICollectionViewDelegate, UICollectionViewDelegateF
                 switch cellInfo.type {
                 case .card:
                     if indexPath.row == 0, let cellCardList = collectionView.dequeueReusableCell(withReuseIdentifier: "PageStatusListCollectionViewCell", for: indexPath) as? PageStatusListCollectionViewCell {
-                        cellCardList.setIconList(UIImage(named: "pageList", in: Bundle(for: type(of: self)), compatibleWith: nil))
+                        cellCardList.setIconList(UIImage(named: "pageList", in: Bundle.tinkoffUI, compatibleWith: nil))
                         if selectedCardCellIndex == indexPath.row {
-                            cellCardList.setIcon(UIImage(named: "pageDotActive", in: Bundle(for: type(of: self)), compatibleWith: nil))
+                            cellCardList.setIcon(UIImage(named: "pageDotActive", in: Bundle.tinkoffUI, compatibleWith: nil))
                         } else {
-                            cellCardList.setIcon(UIImage(named: "pageDot", in: Bundle(for: type(of: self)), compatibleWith: nil))
+                            cellCardList.setIcon(UIImage(named: "pageDot", in: Bundle.tinkoffUI, compatibleWith: nil))
                         }
 
                         cellCardList.onTouchList = { [weak self] in
@@ -257,19 +257,19 @@ extension CardListPresenter: UICollectionViewDelegate, UICollectionViewDelegateF
                         return cellCardList
                     } else {
                         if selectedCardCellIndex == indexPath.row {
-                            cell.setIcon(UIImage(named: "pageDotActive", in: Bundle(for: type(of: self)), compatibleWith: nil))
+                            cell.setIcon(UIImage(named: "pageDotActive", in: Bundle.tinkoffUI, compatibleWith: nil))
                         } else {
-                            cell.setIcon(UIImage(named: "pageDot", in: Bundle(for: type(of: self)), compatibleWith: nil))
+                            cell.setIcon(UIImage(named: "pageDot", in: Bundle.tinkoffUI, compatibleWith: nil))
                         }
                     }
                 case .requisites:
                     if selectedCardCellIndex == indexPath.row {
-                        cell.setIcon(UIImage(named: "pageAddCardActive", in: Bundle(for: type(of: self)), compatibleWith: nil))
+                        cell.setIcon(UIImage(named: "pageAddCardActive", in: Bundle.tinkoffUI, compatibleWith: nil))
                     } else {
-                        cell.setIcon(UIImage(named: "pageAddCard", in: Bundle(for: type(of: self)), compatibleWith: nil))
+                        cell.setIcon(UIImage(named: "pageAddCard", in: Bundle.tinkoffUI, compatibleWith: nil))
                     }
                 case .sbp:
-                    cell.setIcon(UIImage(named: "pageQR", in: Bundle(for: type(of: self)), compatibleWith: nil))
+                    cell.setIcon(UIImage(named: "pageQR", in: Bundle.tinkoffUI, compatibleWith: nil))
                 }
 
                 cell.onTouch = { [weak self] in

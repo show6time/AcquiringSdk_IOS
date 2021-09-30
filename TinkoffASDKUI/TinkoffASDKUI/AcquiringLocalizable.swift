@@ -38,25 +38,18 @@ class AcqLoc: AcquiringLocalize {
         if let b = bundle {
             self.bundle = b
         } else {
-            let path = Bundle(for: type(of: self)).path(forResource: "TinkoffASDKUI", ofType: "bundle")!
-            self.bundle = Bundle(path: path) ?? Bundle.main
-            
-//            if let sdk_bundle_path = Bundle(for: type(of: self)).path(forResource: "TinkoffASDKUI", ofType: "bundle") {
-//                if let sdk_bundle = Bundle(path: sdk_bundle_path) {
-//                    if let languageId = lang, let path = sdk_bundle.path(forResource: languageId, ofType: "lproj") {
-//                        self.bundle = Bundle(path: path)
-//                    }
-//                }
-//            }
-            
-//            self.bundle = Bundle(for: type(of: self))
-//            if let languageId = lang, let path = self.bundle.path(forResource: languageId, ofType: "lproj") {
-//                self.bundle = Bundle(path: path)
-//            }
+            self.bundle = Bundle.tinkoffUI
         }
     }
 
     func localize(_ string: String) -> String {
         return NSLocalizedString(string, tableName: tableName, bundle: bundle, comment: string)
+    }
+}
+
+extension Bundle {
+    static var tinkoffUI: Bundle {
+        let path = Bundle.main.path(forResource: "TinkoffASDKUI", ofType: "bundle")!
+        return Bundle(path: path) ?? Bundle.main
     }
 }
