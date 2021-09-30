@@ -15,10 +15,10 @@ Pod::Spec.new do |spec|
 	spec.source = { :git => 'https://github.com/TinkoffCreditSystems/AcquiringSdk_IOS.git', :tag => spec.version }
 	spec.source_files = 'TinkoffASDKCore/TinkoffASDKCore/**/*.swift'
 
-	spec.resource = "TinkoffASDKCore/TinkoffASDKCore/**/*.{lproj,strings}"
-#	spec.resource_bundles = {
-#		'TinkoffASDKCore' => ['TinkoffASDKCore/TinkoffASDKCore/**/*.{lproj,strings}']
-#	}
+#	spec.resource = "TinkoffASDKCore/TinkoffASDKCore/**/*.{lproj,strings}"
+	spec.resource_bundles = {
+		'TinkoffASDKCore' => ['TinkoffASDKCore/TinkoffASDKCore/**/*.{lproj,strings}']
+	}
 
 	spec.test_spec 'Tests' do |test_spec|
     	test_spec.source_files = 'TinkoffASDKCore/TinkoffASDKCoreTests/**/*.swift'

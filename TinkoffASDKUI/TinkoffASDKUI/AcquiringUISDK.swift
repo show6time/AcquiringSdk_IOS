@@ -182,7 +182,7 @@ public class AcquiringUISDK: NSObject {
         setupCardListDataProvider(for: customerKey)
 
         // create
-        let modalViewController = AddNewCardViewController(nibName: "PopUpViewContoller", bundle: Bundle.tinkoffUI)
+        let modalViewController = AddNewCardViewController(nibName: "PopUpViewContoller", bundle: Bundle.tinkoffASDKUI)
         // вызов setupCardListDataProvider ранее гарантирует, что cardListDataProvider будет не nil, поэтому мы можем
         // передать AcquiringUISDK как cardListDataSourceDelegate, иначе при вызове методов протокола AcquiringCardListDataSourceDelegate
         // будет краш из-за того, что там необходим force unwrap
@@ -591,7 +591,7 @@ public class AcquiringUISDK: NSObject {
 
         // create
         let modalViewController = AcquiringPaymentViewController(nibName: "AcquiringPaymentViewController",
-                                                                 bundle: Bundle.tinkoffUI)
+                                                                 bundle: Bundle.tinkoffASDKUI)
         modalViewController.style = .init(payButtonStyle: style.bigButtonStyle)
 
         var fields: [AcquiringViewTableViewCells] = []
@@ -641,7 +641,7 @@ public class AcquiringUISDK: NSObject {
         modalViewController.onTouchButtonShowCardList = { [weak self, weak modalViewController] in
             guard let self = self else { return }
             
-            let viewController = CardsViewController(nibName: "CardsViewController", bundle: Bundle.tinkoffUI)
+            let viewController = CardsViewController(nibName: "CardsViewController", bundle: Bundle.tinkoffASDKUI)
             viewController.scanerDataSource = modalViewController?.scanerDataSource
             viewController.alertViewHelper = modalViewController?.alertViewHelper
             viewController.style = .init(addNewCardStyle: .init(addCardButtonStyle: self.style.bigButtonStyle))
@@ -1031,7 +1031,7 @@ public class AcquiringUISDK: NSObject {
     }
 
     fileprivate func presentWebView(on _: AcquiringView?, load request: URLRequest, onCancel: @escaping (() -> Void)) {
-        let viewController = WebViewController(nibName: "WebViewController", bundle: Bundle.tinkoffUI)
+        let viewController = WebViewController(nibName: "WebViewController", bundle: Bundle.tinkoffASDKUI)
         webViewController = viewController
         viewController.onCancel = { [weak self] in
             if self?.acquiringView != nil {
@@ -1073,7 +1073,7 @@ public class AcquiringUISDK: NSObject {
     }
 
     private func presentRandomAmounChecking(with requestKey: String, presenter _: AcquiringView?, alertViewHelper: AcquiringAlertViewProtocol?, onCancel: @escaping (() -> Void)) {
-        let viewController = RandomAmounCheckingViewController(nibName: "RandomAmounCheckingViewController", bundle: Bundle.tinkoffUI)
+        let viewController = RandomAmounCheckingViewController(nibName: "RandomAmounCheckingViewController", bundle: Bundle.tinkoffASDKUI)
 
         viewController.onCancel = {
             onCancel()
@@ -1202,7 +1202,7 @@ extension AcquiringUISDK: AcquiringCardListDataSourceDelegate {
         setupCardListDataProvider(for: customerKey)
 
         // create
-        let modalViewController = AddNewCardViewController(nibName: "PopUpViewContoller", bundle: Bundle.tinkoffUI)
+        let modalViewController = AddNewCardViewController(nibName: "PopUpViewContoller", bundle: Bundle.tinkoffASDKUI)
         
         // вызов setupCardListDataProvider ранее гарантирует, что cardListDataProvider будет не nil, поэтому мы можем
         // передать AcquiringUISDK как cardListDataSourceDelegate, иначе при вызове методов протокола AcquiringCardListDataSourceDelegate
@@ -1374,7 +1374,7 @@ extension AcquiringUISDK: AcquiringCardListDataSourceDelegate {
         setupCardListDataProvider(for: customerKey)
 
         // create
-        let modalViewController = CardsViewController(nibName: "CardsViewController", bundle: Bundle.tinkoffUI)
+        let modalViewController = CardsViewController(nibName: "CardsViewController", bundle: Bundle.tinkoffASDKUI)
         // вызов setupCardListDataProvider ранее гарантирует, что cardListDataProvider будет не nil, поэтому мы можем
         // передать AcquiringUISDK как cardListDataSourceDelegate, иначе при вызове методов протокола AcquiringCardListDataSourceDelegate
         // будет краш из-за того, что там необходим force unwrap

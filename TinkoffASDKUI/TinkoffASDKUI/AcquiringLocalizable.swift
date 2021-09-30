@@ -38,7 +38,7 @@ class AcqLoc: AcquiringLocalize {
         if let b = bundle {
             self.bundle = b
         } else {
-            self.bundle = Bundle.tinkoffUI
+            self.bundle = Bundle.tinkoffASDKUI
         }
     }
 
@@ -48,7 +48,7 @@ class AcqLoc: AcquiringLocalize {
 }
 
 extension Bundle {
-    static var tinkoffUI: Bundle {
+    static var tinkoffASDKUI: Bundle {
         let path = Bundle.main.path(forResource: "TinkoffASDKUI", ofType: "bundle")!
         return Bundle(path: path) ?? Bundle.main
     }
