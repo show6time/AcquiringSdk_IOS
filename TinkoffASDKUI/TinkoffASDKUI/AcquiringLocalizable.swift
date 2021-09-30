@@ -38,10 +38,17 @@ class AcqLoc: AcquiringLocalize {
         if let b = bundle {
             self.bundle = b
         } else {
-            self.bundle = Bundle(for: type(of: self))
-            if let languageId = lang, let path = self.bundle.path(forResource: languageId, ofType: "lproj") {
-                self.bundle = Bundle(path: path)
+            if let sdk_bundle_path = Bundle(for: type(of: self)).path(forResource: "TinkoffASDKUI", ofType: "bundle") {
+                if let sdk_bundle = Bundle(path: sdk_bundle_path) {
+                    if let languageId = lang, let path = sdk_bundle.path(forResource: languageId, ofType: "lproj") {
+                        self.bundle = Bundle(path: path)
+                    }
+                }
             }
+//            self.bundle = Bundle(for: type(of: self))
+//            if let languageId = lang, let path = self.bundle.path(forResource: languageId, ofType: "lproj") {
+//                self.bundle = Bundle(path: path)
+//            }
         }
     }
 
