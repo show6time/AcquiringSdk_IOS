@@ -39,6 +39,9 @@ class AcqLoc: AcquiringLocalize {
             self.bundle = b
         } else {
             self.bundle = Bundle.tinkoffASDKUI
+            if let languageId = lang, let path = self.bundle.path(forResource: languageId, ofType: "lproj") {
+                self.bundle = Bundle(path: path)
+            }
         }
     }
 
