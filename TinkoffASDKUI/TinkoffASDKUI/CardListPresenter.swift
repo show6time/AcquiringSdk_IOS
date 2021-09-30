@@ -92,14 +92,14 @@ class CardListPresenter: NSObject {
     private func setupCardListCollectionView(_ collectionView: UICollectionView) {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "defaultCell")
 
-        collectionView.register(UINib(nibName: "PaymentCardCollectionViewCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "PaymentCardCollectionViewCell")
-        collectionView.register(UINib(nibName: "CardListLoadingCollectionViewCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "CardListLoadingCollectionViewCell")
-        collectionView.register(UINib(nibName: "CardListStatusCollectionViewCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "CardListStatusCollectionViewCell")
-        collectionView.register(UINib(nibName: "PaymentCardInputRequisitesCollectionViewCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "PaymentCardInputRequisitesCollectionViewCell")
-        collectionView.register(UINib(nibName: "SBPCollectionViewCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "SBPCollectionViewCell")
+        collectionView.register(UINib(nibName: "PaymentCardCollectionViewCell", bundle: Bundle.tinkoffUI), forCellWithReuseIdentifier: "PaymentCardCollectionViewCell")
+        collectionView.register(UINib(nibName: "CardListLoadingCollectionViewCell", bundle: Bundle.tinkoffUI), forCellWithReuseIdentifier: "CardListLoadingCollectionViewCell")
+        collectionView.register(UINib(nibName: "CardListStatusCollectionViewCell", bundle: Bundle.tinkoffUI), forCellWithReuseIdentifier: "CardListStatusCollectionViewCell")
+        collectionView.register(UINib(nibName: "PaymentCardInputRequisitesCollectionViewCell", bundle: Bundle.tinkoffUI), forCellWithReuseIdentifier: "PaymentCardInputRequisitesCollectionViewCell")
+        collectionView.register(UINib(nibName: "SBPCollectionViewCell", bundle: Bundle.tinkoffUI), forCellWithReuseIdentifier: "SBPCollectionViewCell")
 
-        collectionView.register(UINib(nibName: "UICollectionReusableViewEmpty", bundle: Bundle(for: type(of: self))), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "UICollectionReusableViewEmpty")
-        collectionView.register(UINib(nibName: "UICollectionReusableViewEmpty", bundle: Bundle(for: type(of: self))), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "UICollectionReusableViewEmpty")
+        collectionView.register(UINib(nibName: "UICollectionReusableViewEmpty", bundle: Bundle.tinkoffUI), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "UICollectionReusableViewEmpty")
+        collectionView.register(UINib(nibName: "UICollectionReusableViewEmpty", bundle: Bundle.tinkoffUI), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "UICollectionReusableViewEmpty")
 
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -108,11 +108,11 @@ class CardListPresenter: NSObject {
     private func setupPageStatusCollectionView(_ collectionView: UICollectionView) {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "defaultCell")
 
-        collectionView.register(UINib(nibName: "PageStatusCollectionViewCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "PageStatusCollectionViewCell")
-        collectionView.register(UINib(nibName: "PageStatusListCollectionViewCell", bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: "PageStatusListCollectionViewCell")
+        collectionView.register(UINib(nibName: "PageStatusCollectionViewCell", bundle: Bundle.tinkoffUI), forCellWithReuseIdentifier: "PageStatusCollectionViewCell")
+        collectionView.register(UINib(nibName: "PageStatusListCollectionViewCell", bundle: Bundle.tinkoffUI), forCellWithReuseIdentifier: "PageStatusListCollectionViewCell")
 
-        collectionView.register(UINib(nibName: "UICollectionReusableViewEmpty", bundle: Bundle(for: type(of: self))), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "UICollectionReusableViewEmpty")
-        collectionView.register(UINib(nibName: "UICollectionReusableViewEmpty", bundle: Bundle(for: type(of: self))), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "UICollectionReusableViewEmpty")
+        collectionView.register(UINib(nibName: "UICollectionReusableViewEmpty", bundle: Bundle.tinkoffUI), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "UICollectionReusableViewEmpty")
+        collectionView.register(UINib(nibName: "UICollectionReusableViewEmpty", bundle: Bundle.tinkoffUI), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "UICollectionReusableViewEmpty")
 
         collectionView.delegate = self
         collectionView.dataSource = self

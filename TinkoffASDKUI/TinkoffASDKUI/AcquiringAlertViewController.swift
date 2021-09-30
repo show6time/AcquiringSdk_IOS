@@ -27,7 +27,7 @@ public enum AcquiringAlertIconType {
 
 class AcquiringAlertViewController: UIViewController {
     static func create() -> AcquiringAlertViewController {
-        let alert = AcquiringAlertViewController(nibName: "AcquiringAlertViewController", bundle: Bundle(for: AcquiringAlertViewController.self))
+        let alert = AcquiringAlertViewController(nibName: "AcquiringAlertViewController", bundle: Bundle.tinkoffUI)
         alert.modalPresentationStyle = .overCurrentContext
         alert.modalTransitionStyle = .crossDissolve
         _ = alert.view

@@ -15,9 +15,9 @@ Pod::Spec.new do |spec|
 	spec.source = { :git => 'https://github.com/TinkoffCreditSystems/AcquiringSdk_IOS.git', :tag => spec.version }
 	spec.source_files = 'TinkoffASDKUI/TinkoffASDKUI/**/*.swift'
 
-	spec.resource = "TinkoffASDKUI/TinkoffASDKUI/**/*.{xib}"
+	#spec.resource = "TinkoffASDKUI/TinkoffASDKUI/**/*.{xib}"
 	spec.resource_bundles = {
-		'TinkoffASDKUI' => ['TinkoffASDKUI/TinkoffASDKUI/**/*.{xcassets,strings,lproj,imageset,png}']
+		'TinkoffASDKUI' => ['TinkoffASDKUI/TinkoffASDKUI/**/*.{xcassets,strings,lproj,imageset,png,xib}']
 	}
 #	spec.resource_bundles = {
 #		'TinkoffASDKUI' => ['TinkoffASDKUI/TinkoffASDKUI/**/*.{lproj,strings,xib,xcassets,imageset,png']

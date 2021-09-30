@@ -60,9 +60,9 @@ class AddNewCardViewController: PopUpViewContoller {
 
         inputCardRequisitesController = InputCardRequisitesController()
 
-        tableView.register(UINib(nibName: "InpuCardtRequisitesTableViewCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "InpuCardtRequisitesTableViewCell")
-        tableView.register(UINib(nibName: "AmountTableViewCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "AmountTableViewCell")
-        tableView.register(UINib(nibName: "PSLogoTableViewCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "PSLogoTableViewCell")
+        tableView.register(UINib(nibName: "InpuCardtRequisitesTableViewCell", bundle: Bundle.tinkoffUI), forCellReuseIdentifier: "InpuCardtRequisitesTableViewCell")
+        tableView.register(UINib(nibName: "AmountTableViewCell", bundle: Bundle.tinkoffUI), forCellReuseIdentifier: "AmountTableViewCell")
+        tableView.register(UINib(nibName: "PSLogoTableViewCell", bundle: Bundle.tinkoffUI), forCellReuseIdentifier: "PSLogoTableViewCell")
 
         tableView.dataSource = self
     }

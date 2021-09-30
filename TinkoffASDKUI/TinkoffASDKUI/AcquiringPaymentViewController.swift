@@ -202,7 +202,7 @@ class AcquiringPaymentViewController: PopUpViewContoller {
 
     private func registerCells(_ names: [String], for table: UITableView) {
         names.forEach { name in
-            table.register(UINib(nibName: name, bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: name)
+            table.register(UINib(nibName: name, bundle: Bundle.tinkoffUI), forCellReuseIdentifier: name)
         }
     }
 
