@@ -379,9 +379,11 @@ public class AcquiringUISDK: NSObject {
     }
 
     public func urlSBPPaymentViewController(paymentSource: PaymentSource,
-                                            configuration: AcquiringViewConfiguration) -> UIViewController {
+                                            configuration: AcquiringViewConfiguration,
+                                            completionHandler: PaymentCompletionHandler? = nil) -> UIViewController {
         let urlPaymentViewController = sbpAssembly.urlPaymentViewController(paymentSource: paymentSource,
-                                                                            configuration: configuration)
+                                                                            configuration: configuration,
+                                                                            completionHandler: completionHandler)
         let pullableContainerViewController = PullableContainerViewController(content: urlPaymentViewController)
         
         urlPaymentViewController.noBanksAppAvailable = { [weak pullableContainerViewController] _ in
@@ -403,7 +405,14 @@ public class AcquiringUISDK: NSObject {
 
     public struct ApplePayConfiguration {
         public var merchantIdentifier: String = "merchant.tcsbank.ApplePayTestMerchantId"
-        public var supportedNetworks: [PKPaymentNetwork] = [PKPaymentNetwork.masterCard, PKPaymentNetwork.visa]
+        public var supportedNetworks: [PKPaymentNetwork] {
+            if #available(iOS 14.5, *) {
+                return [.masterCard, .visa, .mir]
+            } else {
+                return [.masterCard, .visa]
+            }
+        }
+        
         public var capabilties = PKMerchantCapability(arrayLiteral: .capability3DS, .capabilityCredit, .capabilityDebit)
 
         public var countryCode: String = "RU"
